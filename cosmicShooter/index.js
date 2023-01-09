@@ -5,6 +5,10 @@ canvas.width = innerWidth
 canvas.height = innerHeight
 
 const scoreEL = document.querySelector('#scoreEL')
+const startGameBtn = document.querySelector('#startGameBtn')
+const modalEl = document.querySelector('#modalEl')
+const bigScoreEl = document.querySelector('#bigScoreEl')
+const song = document.querySelector('song')
 
 class Player {
     constructor(x, y, radius, color) {
@@ -106,10 +110,20 @@ class Particle {
 const x = canvas.width / 2
 const y = canvas.height / 2
 
-const player = new Player(x, y, 10, 'white')
-const projectiles = []
-const enemies = []
-const particles = []
+let player = new Player(x, y, 10, 'white')
+let projectiles = []
+let enemies = []
+let particles = []
+
+function init() {
+    player = new Player(x, y, 10, 'white')
+    projectiles = []
+    enemies = []
+    particles = []
+    score = 0
+    scoreEL.innerHTML = score
+    bigScoreEl.innerHTML = score
+}
 
 function spawnEnemies() {
     setInterval(() => {
@@ -142,7 +156,7 @@ function spawnEnemies() {
             }
 
         enemies.push(new Enemy(x, y, radius, color, velocity))
-    }, 1000)
+    }, 1500)
 }
 
 let animationId 
@@ -183,9 +197,11 @@ function animate() {
             player.y - enemy.y)
 
         //end game.............................................    
-        if (dist - enemy.radius - player.radius < 1)
-          {
+        if (dist - enemy.radius - player.radius < 1) {
             cancelAnimationFrame(animationId)
+            modalEl.style.display = 'flex'
+            bigScoreEl.innerHTML = score
+            document.getElementById("song").pause()
           }      
 //.............................................................
     projectiles.forEach((projectile, projectileIndex) => {
@@ -258,5 +274,10 @@ addEventListener('click', (event) => {
    )
 } )
 
-animate()
-spawnEnemies()
+startGameBtn.addEventListener('click', () => {
+    init()
+    animate()
+    spawnEnemies()
+    modalEl.style.display = 'none'
+    document.getElementById("song").play()
+})
