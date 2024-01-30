@@ -75,6 +75,7 @@ canvas *:not(#div1){
         font-size: .42in;
         color: rgb(190, 190, 190);
         white-space: nowrap;
+        display: none;
     }
     #logo {
         position: fixed;
@@ -83,7 +84,7 @@ canvas *:not(#div1){
         height: 15%;
         width: 25%;
         background-color: rgba(0, 0, 0, 0);
-        display: none;
+        display: block;
         transition: opacity 3.5s ease-in-out;
     }
     #name {
@@ -105,7 +106,7 @@ canvas *:not(#div1){
         height: 60%;
         width: 60%;
         background-color: rgba(0, 0, 0, 0);
-        display: none;
+        display: block;
         transition: opacity 3.5s ease-in-out;
         border-radius: 15px;
     }
