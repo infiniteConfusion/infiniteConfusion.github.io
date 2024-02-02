@@ -4,122 +4,187 @@
     box-sizing: border-box;
 }
 body {
-    overflow: hidden;
-    background: black;
+    background: rgb(0, 0, 0);
 }
-canvas *:not(#div1){
-    position: absolute;
+canvas {
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 
 }
-#div1 {
-    font-family: Georgia, serif;
-    justify-content: center;
-    font-size: .75in;
-    color: rgb(190, 190, 190);
+::-webkit-scrollbar {
+    width: 12px;
 }
-.heavy {
-    opacity: 0.9;
+::-webkit-scrollbar-track {
+    background-color: black; /* Black for the track */
 }
-#trans {
-    transition: opacity 1.5s ease-in-out; 
+::-webkit-scrollbar-thumb {
+    background-color: rgb(70, 70, 70); /* RGB(70, 70, 70) for the thumb */
+    border-radius: 6px;
 }
-#logo {
+#infinite {
     position: fixed;
-    top: 2.5%;
-    left: 5%;
-    height: 15%;
-    width: 25%;
-    background-color: rgba(0, 0, 0, 0);
-    display: none;
-    transition: opacity 3.5s ease-in-out;
-}
-#name {
-    height: 100%;
-    width: 100%;
-    font-family: Georgia, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: .35in;
-    color: rgb(190, 190, 190);
-    text-align: center;
-}
-#message {
-    position: fixed;
-    top: 20%;
+    top: 40%;
     left: 20%;
-    height: 60%;
+    height: 20%;
     width: 60%;
-    background-color: rgba(0, 0, 0, 0);
-    display: none;
-    transition: opacity 3.5s ease-in-out;
-    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0);
+    z-index: 2;
 }
-#text {
-    height: 100%;
+#infinite {
+    font-family: 'copperplate', fantasy;
+    font-size: .75in;
+    justify-content: center;
+    text-align: center;
+    color:  rgba(70, 70, 70, 0.829);
+    letter-spacing: -2px;
+}
+#tools {
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+    background-color: rgba(255, 0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0); /* Transparent border */
+    z-index: 4;
+}
+#game {
     width: 100%;
-    font-family: Georgia, serif;
+    height: 100%;
+    display: block;
+    background-color: transparent;
+    border: none; /* Remove default button border */
+}
+#content {
+    height: 300vh; /* Adjust the height as needed */
+    z-index: 3;
+}
+#movingDiv {
+    position: fixed;
+    top: 100%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, transparent, rgba(70, 70, 70, 0.829), rgba(70, 70, 70, 0.829), transparent) .5;
+    border-radius: 5px;
+    background-color: rgba(199, 98, 98, 0);
+    transform: translateY(105%);
+    z-index: 3;
+}
+#movingDiv {
+    font-family: 'copperplate', fantasy;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: .5in;
-    color: rgb(255, 255, 255);
     text-align: center;
+    font-size: x-large;
+    color: rgba(241, 241, 241, 0.9);
+    letter-spacing: 0.5px;
 }
-@media (max-width: 800px) {
-    #div1 {
-        font-family: Georgia, serif;
-        justify-content: center;
-        font-size: .42in;
-        color: rgb(190, 190, 190);
-        white-space: nowrap;
-        display: none;
-    }
-    #logo {
+#logoDiv {
+    position: fixed;
+    top: 25%;
+    left: 38%;
+    width: 20%; 
+    margin: 20px;
+    padding: 10px; 
+    cursor: black;
+    z-index: 0;
+}
+#logoDiv img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    opacity: 0.3;
+}
+#social-icons {
+    position: absolute;
+    bottom: -195%; /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-55%);
+    display: flex;
+    gap: 20px;
+    z-index: 5; /* Ensure icons are above other elements */
+}
+
+#social-icons a {
+    font-size: 24px; /* Adjust the font size of the icons */
+    color: rgba(70, 70, 70, 0.829);
+    text-decoration: none;
+}
+
+
+@media (max-width: 965px) {
+    #infinite {
         position: fixed;
-        top: 10%;
-        left: 37.5%;
-        height: 15%;
-        width: 25%;
-        background-color: rgba(0, 0, 0, 0);
-        display: block;
-        transition: opacity 3.5s ease-in-out;
-    }
-    #name {
-        height: 100%;
+        top: 45%;
+        left: 0%;
+        height: 10%;
         width: 100%;
-        font-family: Georgia, serif;
+        background-color: rgba(240, 248, 255, 0);
+        z-index: 3;
+    }
+    #infinite {
+        font-family: 'copperplate', fantasy;
+        font-size: .45in;
+        justify-content: center;
+        text-align: center;
+        color:  rgba(70, 70, 70, 0.829);
+        letter-spacing: -2px;
+        white-space: nowrap;
+    }
+    #movingDiv {
+        position: fixed;
+        top: 100%;
+        left: 5%;
+        height: 30%;
+        width: 90%;
+        border-width: 5px;
+        border-style: solid;
+        border-image: linear-gradient(to right, transparent, rgba(70, 70, 70, 1), rgba(70, 70, 70, 1), transparent) .5;
+        border-radius: 5px;
+        background-color: rgba(199, 98, 98, 0);
+        transform: translateY(120%);
+    }
+    #movingDiv {
+        font-family: 'copperplate', fantasy;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: .35in;
-        color: rgb(190, 190, 190);
         text-align: center;
-        white-space: nowrap;
+        font-size: medium;
+        color: rgba(241, 241, 241, 0.877);
+        letter-spacing: 0px;
     }
-    #message {
+    #logoDiv {
         position: fixed;
-        top: 20%;
+        top: 35%;
         left: 20%;
-        height: 60%;
-        width: 60%;
-        background-color: rgba(0, 0, 0, 0);
-        display: block;
-        transition: opacity 3.5s ease-in-out;
-        border-radius: 15px;
+        width: 50%; 
+        cursor: black;
+        z-index: 0;
     }
-    #text {
-        height: 100%;
-        width: 100%;
-        font-family: Georgia, serif;
+    #logoDiv img {
+        width: 100%; /* Make the image fill the container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove any default inline spacing */
+        opacity: 0.3;
+    }
+    #social-icons {
+        position: absolute;
+        bottom: -110%; /* Adjust the distance from the bottom as needed */
+        left: 50%;
+        transform: translateX(-45%);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: large;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        white-space: nowrap;
+        gap: 20px;
+        z-index: 5; /* Ensure icons are above other elements */
+    }
+    #content {
+        height: 229vh; /* Adjust the height as needed */
+        z-index: 3;
     }
 }
