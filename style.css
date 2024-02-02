@@ -175,8 +175,8 @@ canvas {
         opacity: 0.3;
     }
     #social-icons {
-        position: absolute;
-        bottom: -110%; /* Adjust the distance from the bottom as needed */
+        position: fixed;
+        bottom: 20px; /* Adjust the distance from the bottom as needed */
         left: 50%;
         transform: translateX(-45%);
         display: flex;
@@ -184,7 +184,7 @@ canvas {
         z-index: 5; /* Ensure icons are above other elements */
     }
     #content {
-        height: 229vh; /* Adjust the height as needed */
+        height: 215vh; /* Adjust the height as needed */
         z-index: 3;
     }
 }
