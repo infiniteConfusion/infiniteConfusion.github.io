@@ -184,7 +184,7 @@ canvas {
         z-index: 5; /* Ensure icons are above other elements */
     }
     #content {
-        height: 215vh; /* Adjust the height as needed */
+        height: 200vh; /* Adjust the height as needed */
         z-index: 3;
     }
 }
