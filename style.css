@@ -17,10 +17,10 @@ canvas {
     width: 12px;
 }
 ::-webkit-scrollbar-track {
-    background-color: black; /* Black for the track */
+    background-color: black; 
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(70, 70, 70); /* RGB(70, 70, 70) for the thumb */
+    background-color: black; 
     border-radius: 6px;
 }
 #infinite {
@@ -47,7 +47,7 @@ canvas {
     width: 20%;
     height: 30%;
     background-color: rgba(255, 0, 0, 0);
-    border: 2px solid rgba(0, 0, 0, 0); /* Transparent border */
+    border: 2px solid rgba(0, 0, 0, 0); 
     z-index: 4;
 }
 #game {
@@ -55,25 +55,26 @@ canvas {
     height: 100%;
     display: block;
     background-color: transparent;
-    border: none; /* Remove default button border */
+    border: none; 
 }
 #content {
-    height: 300vh; /* Adjust the height as needed */
+    height: 300vh; 
     z-index: 3;
 }
 #movingDiv {
     position: fixed;
-    top: 100%;
-    left: 25%;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     height: 50%;
     width: 50%;
     border-width: 5px;
     border-style: solid;
-    border-image: linear-gradient(to right, transparent, rgba(70, 70, 70, 0.829), rgba(70, 70, 70, 0.829), transparent) .5;
+    border-image: linear-gradient(to right, transparent, rgba(70, 70, 70, 0.829), rgba(70, 70, 70, 0.829), transparent) 0.5;
     border-radius: 5px;
     background-color: rgba(199, 98, 98, 0);
-    transform: translateY(105%);
     z-index: 3;
+    opacity: 0; 
 }
 #movingDiv {
     font-family: 'copperplate', fantasy;
@@ -88,7 +89,7 @@ canvas {
 #logoDiv {
     position: fixed;
     top: 25%;
-    left: 38%;
+    left: 38.9%;
     width: 20%; 
     margin: 20px;
     padding: 10px; 
@@ -96,24 +97,23 @@ canvas {
     z-index: 0;
 }
 #logoDiv img {
-    width: 100%; /* Make the image fill the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any default inline spacing */
+    width: 100%; 
+    height: auto; 
+    display: block; 
     opacity: 0.3;
 }
 #social-icons {
-    position: absolute;
-    bottom: -195%; /* Adjust the distance from the bottom as needed */
-    left: 50%;
-    transform: translateX(-55%);
+    position: fixed;
+    bottom: 90%; 
+    left: 85%;
+    transform: translateX(-50%);
     display: flex;
     gap: 20px;
-    z-index: 5; /* Ensure icons are above other elements */
+    z-index: 5; 
 }
-
 #social-icons a {
-    font-size: 24px; /* Adjust the font size of the icons */
-    color: rgba(70, 70, 70, 0.829);
+    font-size: 24px; 
+    color: rgba(201, 201, 201, 0.829);
     text-decoration: none;
 }
 
@@ -129,18 +129,19 @@ canvas {
         z-index: 3;
     }
     #infinite {
-        font-family: 'copperplate', fantasy;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
         font-size: .45in;
         justify-content: center;
         text-align: center;
-        color:  rgba(70, 70, 70, 0.829);
+        color:  rgba(0, 0, 0, 0.829);
         letter-spacing: -2px;
         white-space: nowrap;
     }
     #movingDiv {
         position: fixed;
-        top: 100%;
-        left: 5%;
+        bottom: 35%;
+        left: 50%;
         height: 30%;
         width: 90%;
         border-width: 5px;
@@ -148,10 +149,9 @@ canvas {
         border-image: linear-gradient(to right, transparent, rgba(70, 70, 70, 1), rgba(70, 70, 70, 1), transparent) .5;
         border-radius: 5px;
         background-color: rgba(199, 98, 98, 0);
-        transform: translateY(120%);
     }
     #movingDiv {
-        font-family: 'copperplate', fantasy;
+        font-family: Arial, Helvetica, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -169,22 +169,22 @@ canvas {
         z-index: 0;
     }
     #logoDiv img {
-        width: 100%; /* Make the image fill the container */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Remove any default inline spacing */
+        width: 100%; 
+        height: auto; 
+        display: block; 
         opacity: 0.3;
     }
     #social-icons {
         position: fixed;
-        bottom: 20px; /* Adjust the distance from the bottom as needed */
+        bottom: 20px; 
         left: 50%;
-        transform: translateX(-45%);
+        transform: translateX(-50%);
         display: flex;
         gap: 20px;
-        z-index: 5; /* Ensure icons are above other elements */
+        z-index: 5; 
     }
     #content {
-        height: 200vh; /* Adjust the height as needed */
+        height: 230vh; 
         z-index: 3;
     }
 }
