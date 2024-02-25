@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(34, 34, 36);
+  }
+  
+  .tv {
+    position: relative;
+    width: 90%; 
+    height: 100vh; 
+    margin-left: 5%;
+    margin-right: 5%;  
+    perspective: 800px;
+    overflow: hidden; 
+  }
+
+  #canvas {
+    position: absolute;
+    top: 10%; 
+    left: 10%; 
+    width: 80%;
+    height: 82%;
+    border-radius: 10px;
+    z-index: 3; 
+  }
+  
+  .tv-screen {
+    position: absolute;
+    top: 10%;
+    left: 9%;
+    width: 82%;
+    height: 82%;
+    background-color: black; 
+    border-radius: 10px;
+    z-index: 2;
+  }
+  #TVS {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    transition: background-color 3.5s ease; 
+  }
+  #TVS {
+    font-family: 'copperplate', fantasy;
+    font-size: 425%;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+  }
+  
+  .tv-left,
+  .tv-right{
+    position: absolute;
+    background-image: linear-gradient(to right, grey, rgba(70, 70, 70), rgba(70, 70, 70), grey);
+  }
+
+  .tv-bottom {
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), grey);
+  }
+  .tv-top {
+    position: absolute;
+    background-image: linear-gradient(to bottom, grey, grey, rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), grey);
+  }
+  
+.tv-bottom,
+.tv-top {
+  height: 10%;
+  width: 100%;
+}
+
+.tv-left,
+.tv-right {
+  height: 100%;
+  width: 10%;
+}
+
+.tv-top {
+  top: 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.tv-bottom {
+  bottom: 0;
+}
+
+.tv-left {
+  left: 0;
+  transform: skewY(-45deg);
+}
+
+.tv-right {
+  right: 0;
+  transform: skewY(45deg);
+}
+
+#title {
+  position: fixed;
+  top: 1%;
+  left: 35%;
+  height: 7%;
+  width: 30%;
+  background-color: rgba(128, 128, 128, 0.815);
+  border: 3px solid rgba(34, 34, 36);
+  border-radius: 25px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+}
+#title {
+  font-family: 'copperplate', fantasy;
+  font-size: xx-large;
+  font-weight: bold;
+  color: rgb(34, 34, 36);
+}
+
+#powerOn {
+  position: fixed;
+  bottom: 1%;
+  left: 20%;
+  height: 5%;
+  width: 5%;
+  background-color: rgb(34, 34, 36);
+  z-index: 2;
+}
+#PLight {
+  position: fixed;
+  bottom: 3%;
+  left: 15%;
+  height: 1%;
+  width: .5%;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+#controlls {
+  position: fixed;
+  bottom: .5%;
+  left: 33%;
+  height: 5%;
+  width: 20%;
+  background-color: rgba(128, 128, 128, 0.815);
+  border: 3px solid rgb(34, 34, 36);
+  border-radius: 5px;
+  z-index: 2;
+}
+#channelUp {
+  position: fixed;
+  left: 35%;
+  bottom: -1%;
+}
+#channelUp {
+  font-size: 300%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#channelDown {
+  position: fixed;
+  left: 39%;
+  bottom: 0%;
+}
+#channelDown {
+  font-size: 300%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#volumeDown {
+  position: fixed;
+  left: 47%;
+  bottom: .25%;
+}
+#volumeDown {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#volumeUp {
+  position: fixed;
+  left: 50%;
+  bottom: .25%;
+}
+#volumeUp {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#plugs {
+  position: fixed;
+  bottom: 0.5%;
+  left: 65%; 
+  transform: translateX(-50%); 
+  height: 6%;
+  width: 12%;
+  background-color: rgba(49, 49, 49, 0.897);
+  border: 3px solid rgb(34, 34, 36);
+  border-radius: 25px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around; 
+  gap: 10px;
+  z-index: 2;
+}
+#VI {
+  font-size: 200%; 
+  color: yellow;
+  text-decoration: none;
+}
+#LV {
+  font-size: 200%; 
+  color: red;
+  text-decoration: none;
+}
+#RV {
+  font-size: 200%; 
+  color: white;
+  text-decoration: none;
+}
