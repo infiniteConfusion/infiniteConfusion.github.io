@@ -146,42 +146,31 @@ body {
   background-color: rgba(128, 128, 128, 0.815);
   border: 3px solid rgb(34, 34, 36);
   border-radius: 5px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
   z-index: 2;
 }
-#channelUp {
-  position: fixed;
-  left: 35%;
-  bottom: -1%;
+#controlls {
+  font-family: 'copperplate', fantasy;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(34, 34, 36);
 }
 #channelUp {
-  font-size: 300%; 
+  font-size: 250%; 
   color: rgba(34, 34, 36);
   text-decoration: none;
 }
 #channelDown {
-  position: fixed;
-  left: 39%;
-  bottom: 0%;
-}
-#channelDown {
-  font-size: 300%; 
+  font-size: 250%; 
   color: rgba(34, 34, 36);
   text-decoration: none;
-}
-#volumeDown {
-  position: fixed;
-  left: 47%;
-  bottom: .25%;
 }
 #volumeDown {
   font-size: 250%; 
   color: rgba(34, 34, 36);
   text-decoration: none;
-}
-#volumeUp {
-  position: fixed;
-  left: 50%;
-  bottom: .25%;
 }
 #volumeUp {
   font-size: 250%; 
@@ -201,7 +190,6 @@ body {
   display: flex;
   align-items: center; 
   justify-content: space-around; 
-  gap: 10px;
   z-index: 2;
 }
 #VI {
