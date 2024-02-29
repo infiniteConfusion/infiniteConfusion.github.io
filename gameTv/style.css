@@ -1,0 +1,542 @@
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+@font-face {
+  font-family: 'DS-Digital';
+  src: url("DS-DIGII.TTF") format('truetype');
+}
+@font-face {
+  font-family: 'japan';
+  src: url("aAnnyeongHaseyo.ttf") format('truetype')
+}
+@font-face {
+  font-family: 'japan-base';
+  src: url("Korean_Calligraphy.ttf") format('truetype')
+}
+@font-face {
+  font-family: 'impact';
+  src: url("Impacted2.0.ttf") format('truetype')
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+} 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(34, 34, 36);
+} 
+.tv {
+  position: relative;
+  width: 90%; 
+  height: 100vh; 
+  margin-left: 5%;
+  margin-right: 5%;  
+  perspective: 800px;
+  overflow: hidden; 
+}
+#TVS {
+  position: absolute;
+  top: 10%;
+  left: 9%;
+  width: 82%;
+  height: 82%; 
+  background-color: rgba(0, 0, 0);
+  border-radius: 10px;
+  display: flex;
+  z-index: 1;
+}
+
+#ch0 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 1.5s ease;   /* here it is */
+}
+#ch0.show {
+  opacity: 1;
+}
+#ch0 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#ch1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at center, rgb(241, 241, 241) 0%, rgba(241, 241, 241, 0.4) 90%);
+  border-radius: inherit;
+  border: 2px solid rgba(0, 0, 0);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#ch1.show {
+  opacity: 1;
+}
+#logo {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  margin: 20px;
+  padding: 10px; 
+  z-index: 0;
+}
+#logo img {
+  width: 100%; 
+  height: auto; 
+  animation: spin 15s linear infinite;
+}
+#comMess {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 40%;
+  display: flex;
+  align-items: center; 
+  justify-content:center;
+  text-align: center;
+}
+#comMess {
+  font-family: 'DS-Digital', sans-serif;
+  color: rgba(0, 0, 0);
+}
+#ch2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at center, rgb(255, 0, 76) 0%, rgba(255, 0, 76, 0.4) 90%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#ch2.show {
+  opacity: 1;
+}
+#GMdetail {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  height: 75%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#GMdetail {
+  font-family: 'japan-base';
+  font-weight: bold;
+  font-size: larger;
+  color: #000;
+}
+#GMname {
+  position: absolute;
+  top: 20%;
+  left: 42.5%;
+  height: 20%;
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+}
+#GMname {
+  font-family: 'japan', sans-serif;
+  font-size: 350%;
+}
+#GMimg {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  height: 55%;
+  width: 55%;
+  border-radius: 15px;
+}
+#GMimg img {
+  width: 100%; 
+  height: 100%; 
+  border: 3px solid rgba(0, 0, 0);
+  border-radius: 15px;
+  opacity: .90;
+}
+#CoSo {
+  position: absolute;
+  top: 82%;
+  left: 40%;
+  height: 10%;
+  width: 55%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+#CoSo {
+  font-family: 'impact', sans-serif;
+  font-size: 300%;
+  color: aliceblue;
+}
+#ch3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at center, rgb(43, 43, 43) 0%, rgba(0, 0, 0, 0.76) 90%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#ch3.show {
+  opacity: 1;
+}
+#thXdate {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  height: 10%;
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+#thXdate {
+  font-family: 'DS-Digital', sans-serif;
+  font-size: 350%;
+  color: rgba(201, 201, 201);
+}
+#thXs {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+}
+#thXs {
+  font-family: 'copperplate', fantasy;
+  font-size: larger;
+  color: rgba(201, 201, 201);
+}
+#chNum {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  height: 5%;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#chNum {
+  font-family: 'DS-Digital', sans-serif;
+  font-size: 50px;
+  color: rgb(201, 201, 201);
+}
+.tv-left,
+.tv-right{
+  position: absolute;
+  background-image: linear-gradient(to right, grey, rgba(70, 70, 70), rgba(70, 70, 70), grey);
+}
+.tv-bottom {
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), grey);
+}
+.tv-top {
+  position: absolute;
+  background-image: linear-gradient(to bottom, grey, grey, rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), rgba(70, 70, 70), grey);
+}
+.tv-bottom,
+.tv-top {
+  height: 10%;
+  width: 100%;
+}
+.tv-left,
+.tv-right {
+  height: 100%;
+  width: 10%;
+}
+.tv-top {
+  top: 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.tv-bottom {
+  bottom: 0;
+}
+.tv-left {
+  left: 0;
+  transform: skewY(-45deg);
+}
+.tv-right {
+  right: 0;
+  transform: skewY(45deg);
+}
+#title {
+  position: fixed;
+  top: 1%;
+  left: 35%;
+  height: 7%;
+  width: 30%;
+  background-color: rgba(128, 128, 128, 0.815);
+  border: 3px solid rgba(34, 34, 36);
+  border-radius: 25px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+}
+#title {
+  font-family: 'copperplate', fantasy;
+  font-size: xx-large;
+  font-weight: bold;
+  color: rgb(34, 34, 36);
+}
+#powerOn {
+  position: fixed;
+  bottom: 1%;
+  left: 20%;
+  height: 5%;
+  width: 5%;
+  background-color: rgb(34, 34, 36);
+  z-index: 2;
+}
+#PLight {
+  position: fixed;
+  bottom: 3%;
+  left: 15%;
+  height: 1%;
+  width: .5%;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 3;
+}
+#controlls {
+  position: fixed;
+  bottom: .5%;
+  left: 33%;
+  height: 5%;
+  width: 20%;
+  background-color: rgba(128, 128, 128, 0.815);
+  border: 3px solid rgb(34, 34, 36);
+  border-radius: 5px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  z-index: 2;
+}
+#controlls {
+  font-family: 'copperplate', fantasy;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(34, 34, 36);
+}
+#channelUp {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#channelDown {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#volumeDown {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#volumeUp {
+  font-size: 250%; 
+  color: rgba(34, 34, 36);
+  text-decoration: none;
+}
+#plugs {
+  position: fixed;
+  bottom: 0.5%;
+  left: 65%; 
+  transform: translateX(-50%); 
+  height: 6%;
+  width: 12%;
+  background-color: rgba(49, 49, 49, 0.897);
+  border: 3px solid rgb(34, 34, 36);
+  border-radius: 25px;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around; 
+  z-index: 2;
+}
+#VI {
+  font-size: 200%; 
+  color: yellow;
+  text-decoration: none;
+}
+#LV {
+  font-size: 200%; 
+  color: red;
+  text-decoration: none;
+}
+#RV {
+  font-size: 200%; 
+  color: white;
+  text-decoration: none;
+}
+#sideID {
+  position: fixed;
+  top: 5%;
+  right: 0;
+  height: 35%;
+  width: 5%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-around; 
+}
+#sideID a {
+  font-size: 30px; 
+  color: rgba(201, 201, 201, 0.9);
+  text-decoration: none;
+}
+#detail {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 10%;
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-around
+}
+#detail a {
+  font-size: 20px;
+  color: rgba(201, 201, 201, 0.9);
+  text-decoration: none;
+}
+#dMessage {
+  position: fixed;
+  bottom: 1%;
+  left: 4%;
+  height: 15%;
+  width: 15%;
+  border-radius: 5px;
+  background-color: rgba(201, 201, 201, 0.9);
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  align-items: center; 
+  justify-content:center;
+  text-align: center;
+  z-index: 3;
+}
+#dMessage {
+  font-size: small;
+  color: black;
+}
+#dMessage.show {
+  opacity: 1;
+}
+#options {
+  position: fixed;
+  bottom: 85%;
+  left: 1%;
+  display: flex;
+  z-index: 5;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite; 
+}
+#options a {
+  font-size: 50px;
+  color: rgba(201, 201, 201, 0.829);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+#options:hover a {
+  transform: scale(1.05); 
+}
+#choose {
+  position: fixed;
+  bottom: 90%;
+  left: 4%;
+  height: 0;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 3px solid rgba(170, 170, 170, 0.95);
+  border-bottom: 3px solid rgba(170, 170, 170, 0.95);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 1s ease, height 1s ease, width 1s ease, bottom 1s ease, left 1s ease;
+  z-index: 3;
+}
+#choose.show {
+  bottom: 60%;
+  left: 5.5%;
+  height: 30%; 
+  width: 12%; 
+  opacity: 1;
+}
+#choose > div {
+  margin: 0px 0; 
+  font-family: 'copperplate', fantasy;
+  font-size: 0; 
+  color: rgba(201, 201, 201, 0.829);
+}
+#choose > div i {
+  margin-right: 5px; 
+  font-size: 0; 
+  color: rgba(201, 201, 201, 0.829);
+}
+#choose.enlarge > div {
+  margin: 13px 0; 
+  font-family: 'copperplate', fantasy;
+  font-size: 25px; 
+  color: rgba(201, 201, 201, 0.829);
+  transition: font-size 1.25s ease, margin 1s ease;
+}
+#choose.enlarge > div i {
+  margin-right: 5px; 
+  font-size: 30px; 
+  color: rgba(201, 201, 201, 0.829);
+  transition: font-size 1.25s ease;
+}
+#game:hover {
+  transform: scale(1.05);
+}
+#game a {
+  color: inherit;
+  text-decoration: none;
+}
+#project:hover {
+  transform: scale(1.05);
+}
+#project a {
+  color: inherit;
+  text-decoration: none;
+}
+#connect:hover {
+  transform: scale(1.05);
+}
+#connect a {
+  color: inherit;
+  text-decoration: none;
+}
