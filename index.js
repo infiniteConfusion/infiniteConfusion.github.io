@@ -10,11 +10,12 @@ const bubbles = [];
 
 let mouseX, mouseY;
 
-const toolsDiv = document.getElementById('tools');
 const movingDiv = document.getElementById('movingDiv');
 
-const toolsDivOffsetTop = toolsDiv.offsetTop;
 const movingDivInitialTop = parseFloat(window.getComputedStyle(movingDiv).top);
+
+const optionsDiv = document.getElementById('options');
+const chooseDiv = document.getElementById('choose');
 
 const spotlight = {
     x: canvas.width / 2,
@@ -108,6 +109,7 @@ window.addEventListener('resize', handleResize);
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
 
+
     if (scrollPosition > window.innerHeight / 2) {
         movingDivOpacity = Math.min((scrollPosition - window.innerHeight / 2) / 500, 1); // Adjust 500 as needed
     } else {
@@ -119,6 +121,11 @@ window.addEventListener('scroll', () => {
     const infiniteDiv = document.getElementById('infinite');
     infiniteDiv.style.opacity = Math.min(1 - scrollPosition / 500, 1);
 
+});
+
+optionsDiv.addEventListener('click', () => {
+    chooseDiv.classList.toggle('show');
+    chooseDiv.classList.toggle('enlarge');
 });
 
 for (let i = 0; i < maxBubbles; i++) {
