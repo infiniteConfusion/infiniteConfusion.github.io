@@ -50,7 +50,7 @@ canvas {
     border: 2px solid rgba(0, 0, 0, 0); 
     z-index: 4;
 }
-#game {
+#centerIcon {
     width: 100%;
     height: 100%;
     display: block;
@@ -117,6 +117,110 @@ canvas {
     text-decoration: none;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+#options {
+    position: fixed;
+    bottom: 85%;
+    left: 3%;
+    display: flex;
+    z-index: 5;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite; 
+}
+#options a {
+    font-size: 50px;
+    color: rgba(201, 201, 201, 0.829);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+#options:hover a {
+    transform: scale(1.05); 
+}
+
+#choose {
+    position: fixed;
+    bottom: 90%;
+    left: 4%;
+    height: 0;
+    width: 0;
+    background-color: transparent;
+    border-top: 3px solid rgba(70, 70, 70, 0.877);
+    border-bottom: 3px solid rgba(70, 70, 70, 0.877);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 1s ease, height 1s ease, width 1s ease, bottom 1s ease, left 1s ease;
+    z-index: 3;
+}
+#choose.show {
+    bottom: 60%;
+    left: 7%;
+    height: 30%; 
+    width: 12%; 
+    opacity: 1;
+}
+#choose > div {
+    margin: 0px 0; 
+    font-family: 'copperplate', fantasy;
+    font-size: 0; 
+    color: rgba(201, 201, 201, 0.829);
+}
+
+#choose > div i {
+    margin-right: 5px; 
+    font-size: 0; 
+    color: rgba(201, 201, 201, 0.829);
+}
+#choose.enlarge > div {
+    margin: 13px 0; 
+    font-family: 'copperplate', fantasy;
+    font-size: 25px; 
+    color: rgba(201, 201, 201, 0.829);
+    transition: font-size 1.25s ease, margin 1s ease;
+}
+#choose.enlarge > div i {
+    margin-right: 5px; 
+    font-size: 30px; 
+    color: rgba(201, 201, 201, 0.829);
+    transition: font-size 1.25s ease;
+}
+
+#game:hover {
+    transform: scale(1.05);
+}
+#game a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#project:hover {
+    transform: scale(1.05);
+}
+#project a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#connect:hover {
+    transform: scale(1.05);
+}
+#connect a {
+    color: inherit;
+    text-decoration: none;
+}
+
+mobileMessage {
+    display: none;
+}
 
 @media (max-width: 965px) {
     #infinite {
@@ -186,5 +290,28 @@ canvas {
     #content {
         height: 230vh; 
         z-index: 3;
+    }
+    #options {
+        display: none;
+        z-index: 0;
+    }
+    #mobileMessage {
+        position: fixed;
+        top: 22%;
+        left: 5%;
+        height: 10%;
+        width: 90%;
+        background-color: transparent;
+        display: block;
+    }
+    #mobileMessage {
+        font-family: 'copperplate', fantasy;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: large;
+        color: rgba(241, 241, 241, 0.8);
+        letter-spacing: 0.5px;
     }
 }
