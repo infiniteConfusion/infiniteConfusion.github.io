@@ -387,12 +387,12 @@ body {
 }
 #LV {
   font-size: 200%; 
-  color: red;
+  color: white;
   text-decoration: none;
 }
 #RV {
   font-size: 200%; 
-  color: white;
+  color: red;
   text-decoration: none;
 }
 #sideID {
