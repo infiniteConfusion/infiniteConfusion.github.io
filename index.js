@@ -142,3 +142,17 @@ function animate() {
 }
 
 animate();
+
+document.getElementById('connect').addEventListener('click', function() {
+    const icons = document.querySelectorAll('#social-icons i');
+  
+    icons.forEach(icon => {
+        icon.classList.add('blink');
+    });
+  
+    setTimeout(() => {
+        icons.forEach(icon => {
+            icon.classList.remove('blink');
+        });
+    }, 2500); 
+  });
