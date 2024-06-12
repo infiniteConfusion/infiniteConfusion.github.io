@@ -9,6 +9,7 @@
 .blink {
     animation: blink 2.5s ease-in-out;
 }
+
 *  {
     margin: 0;
     padding: 0;
@@ -45,7 +46,7 @@ canvas {
 }
 #infinite {
     font-family: 'copperplate', fantasy;
-    font-size: .75in;
+    font-size: 5.3vw;
     justify-content: center;
     text-align: center;
     color:  rgba(70, 70, 70, 0.829);
@@ -93,7 +94,7 @@ canvas {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: x-large;
+    font-size: 2vw;
     color: rgba(241, 241, 241, 0.9);
     letter-spacing: 0.5px;
 }
@@ -123,7 +124,7 @@ canvas {
     z-index: 5; 
 }
 #social-icons a {
-    font-size: 24px; 
+    font-size: 2vw; 
     color: rgba(201, 201, 201, 0.829);
     text-decoration: none;
 }
@@ -146,7 +147,7 @@ canvas {
     animation: pulse 2s infinite; 
 }
 #options a {
-    font-size: 50px;
+    font-size: 3.5vw;
     color: rgba(201, 201, 201, 0.829);
     text-decoration: none;
     transition: transform 0.3s ease;
@@ -196,13 +197,13 @@ canvas {
 #choose.enlarge > div {
     margin: 13px 0; 
     font-family: 'copperplate', fantasy;
-    font-size: 25px; 
+    font-size: 2vw; 
     color: rgba(201, 201, 201, 0.829);
     transition: font-size 1.25s ease, margin 1s ease;
 }
 #choose.enlarge > div i {
     margin-right: 5px; 
-    font-size: 30px; 
+    font-size: 2vw; 
     color: rgba(201, 201, 201, 0.829);
     transition: font-size 1.25s ease;
 }
