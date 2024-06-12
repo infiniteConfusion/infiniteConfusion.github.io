@@ -1,3 +1,14 @@
+@keyframes blink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+}
+.blink {
+    animation: blink 2.5s ease-in-out;
+}
 *  {
     margin: 0;
     padding: 0;
