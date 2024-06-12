@@ -127,7 +127,9 @@ canvas {
     color: rgba(201, 201, 201, 0.829);
     text-decoration: none;
 }
-
+#connect a {
+    cursor: pointer;
+}
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
