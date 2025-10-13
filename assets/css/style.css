@@ -4,6 +4,11 @@ body {
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
+#hm {
+    background-color: #444;
+    color: #f8f9fa;
+}
+
 /* Image formatting */
 .service-img {
   width: 100%;
@@ -26,4 +31,5 @@ body {
 
 #services p {
   font-size: 0.95rem;
+
 }
