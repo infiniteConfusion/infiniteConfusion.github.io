@@ -1,0 +1,107 @@
+body {
+  background-color: #180624;
+  color: #f8f9fa;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+#hm {
+    background-color: #444;
+    color: #f8f9fa;
+}
+
+header h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3rem;
+  color: #f8f9fa;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1);
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: scale(1);
+  }
+}
+
+.service-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: 2px solid #444;
+}
+
+.service-img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+#services h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#services p {
+  font-size: 0.95rem;
+}
+
+#custom-handheld-video video {
+  width: 50%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  #custom-handheld-video video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* Fix image and video scaling inside services section */
+.service-img,
+#services video {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* prevents overflow on desktop */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.service-img:hover,
+#services video:hover {
+  transform: scale(1.03);
+}
+
+/* Improve spacing between header and section */
+#services {
+  padding-top: 3rem;  /* reduce top padding */
+}
+
+/* Responsive tweak for large screens */
+@media (min-width: 992px) {
+  .service-img,
+  #services video {
+    max-height: 350px;
+  }
+}
+
+/* Optional: tighten spacing on mobile */
+@media (max-width: 768px) {
+  #services {
+    padding-top: 2rem;
+  }
+}
