@@ -1,0 +1,903 @@
+/* =========================================
+   INFINITE CONFUSION
+   Main Styles
+========================================= */
+
+:root {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --muted: #777;
+    --line: #252525;
+
+    --transition-speed: 700ms;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    overflow: hidden;
+
+    background: var(--background);
+    color: var(--foreground);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+}
+body.service-open {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   UNIVERSE
+========================================= */
+
+#universe {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    left: 0;
+    top: 0;
+
+    transition:
+        transform var(--transition-speed)
+        cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+
+/* =========================================
+   SCREENS
+========================================= */
+
+.screen {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.home {
+    left: 0;
+    top: 0;
+}
+
+.about {
+    left: -100vw;
+    top: 0;
+}
+
+.services {
+    left: 0;
+    top: 100vh;
+}
+
+.projects {
+    left: 100vw;
+    top: 0;
+}
+
+.contact {
+    left: 0;
+    top: -100vh;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+    width: min(720px, 100%);
+
+    position: relative;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand h1 {
+    font-size: clamp(2.8rem, 7vw, 6rem);
+
+    font-weight: 800;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+
+    margin: 0;
+}
+
+.brand p {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.08em;
+
+    max-width: 500px;
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.05em;
+
+    margin: 0 0 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 15px;
+}
+
+p {
+    max-width: 600px;
+
+    color: #aaa;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   SECTION NUMBER
+========================================= */
+
+.section-number {
+    display: block;
+
+    color: var(--muted);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   NAVIGATION HINT
+========================================= */
+
+.navigation-hint {
+    margin-top: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--muted);
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.service-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.service {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr auto 30px;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    align-items: center;
+
+    text-align: left;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--foreground);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+}
+
+
+.service > span:first-child {
+
+    color: var(--muted);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+
+}
+
+
+.service strong {
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+}
+
+
+.service small {
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+}
+
+
+.service-arrow {
+
+    color: #333;
+
+    font-size: 1rem;
+
+    transition:
+        color 200ms ease,
+        transform 200ms ease;
+
+}
+
+
+.service:hover .service-arrow {
+
+    color: white;
+
+    transform: translateX(5px);
+
+}
+
+
+.service:hover strong {
+
+    color: white;
+
+}
+
+/* =========================================
+   SERVICE OVERLAY
+========================================= */
+
+.service-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+
+}
+
+
+.service-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================
+   SERVICE MODAL
+========================================= */
+
+.service-modal {
+
+    position: relative;
+
+    width: min(800px, 100%);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: #0a0a0a;
+
+    border: 1px solid #333;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.7);
+
+    transform: translateY(20px);
+
+    transition:
+        transform 300ms ease;
+
+}
+
+
+.service-overlay.active .service-modal {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   MODAL CLOSE
+========================================= */
+
+.service-close {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+    float: left;
+
+    width: 45px;
+
+    height: 45px;
+
+    margin: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: #777;
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.service-close:hover {
+
+    color: white;
+
+}
+
+
+/* =========================================
+   MODAL CONTENT
+========================================= */
+
+.service-modal-content {
+
+    padding: 60px;
+
+}
+
+
+.service-modal-content h2 {
+
+    margin-bottom: 30px;
+
+}
+
+
+#service-modal-body {
+
+    padding-bottom: 40px;
+
+}
+
+
+#service-modal-body p {
+
+    max-width: 650px;
+
+}
+
+
+#service-modal-body h3 {
+
+    margin-top: 40px;
+
+    margin-bottom: 15px;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+#service-modal-body ul {
+
+    padding-left: 20px;
+
+    color: #aaa;
+
+    line-height: 2;
+
+}
+
+
+/* =========================================
+   MOBILE MODAL
+========================================= */
+
+@media (max-width: 768px) {
+
+    .service-overlay {
+
+        padding: 15px;
+
+    }
+
+
+    .service-modal {
+
+        max-height: 90vh;
+
+    }
+
+
+    .service-modal-content {
+
+        padding: 50px 25px 30px;
+
+    }
+
+
+    .service-modal-content h2 {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .service {
+
+        grid-template-columns: 30px 1fr 25px;
+
+    }
+
+
+    .service small {
+
+        grid-column: 2;
+
+        margin-top: -8px;
+
+    }
+
+
+    .service-arrow {
+
+        grid-column: 3;
+
+        grid-row: 1 / span 2;
+
+    }
+
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+#contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    max-width: 550px;
+
+    margin-top: 30px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    background: transparent;
+
+    border: 1px solid var(--line);
+
+    padding: 12px;
+
+    color: white;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+}
+
+#contact-form textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #666;
+}
+
+#contact-form button {
+    align-self: flex-start;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    padding: 10px 25px;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   CONTACT STATUS
+========================================= */
+
+.contact-status {
+
+    margin-top: 15px;
+
+    min-height: 20px;
+
+    color: var(--muted);
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+/* =========================================
+   DIRECTIONAL NAVIGATION
+========================================= */
+
+#navigation {
+
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    width: 120px;
+    height: 120px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================
+   NAVIGATION ROW
+========================================= */
+
+.nav-middle {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+/* =========================================
+   ALL NAV BUTTONS
+========================================= */
+
+#navigation button {
+
+    background: transparent;
+
+    border: none;
+
+    color: #333;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition:
+        color 250ms ease,
+        opacity 250ms ease,
+        transform 250ms ease;
+
+}
+
+
+/* =========================================
+   DIRECTIONAL ARROWS
+========================================= */
+
+.nav-direction {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+
+    opacity: 0.25;
+
+}
+
+
+/*
+    Available directions
+*/
+
+.nav-direction.available {
+
+    color: #ffffff;
+
+    opacity: 1;
+
+}
+
+
+/*
+    Hover effect
+*/
+
+.nav-direction.available:hover {
+
+    transform: scale(1.25);
+
+}
+
+
+/*
+    Unavailable directions
+*/
+
+.nav-direction:not(.available) {
+
+    cursor: default;
+
+}
+
+
+/* =========================================
+   CENTER LOGO
+========================================= */
+
+#nav-home {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+}
+
+
+#nav-home img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition:
+        transform 300ms ease,
+        opacity 300ms ease;
+
+}
+
+
+#nav-home:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+    #navigation {
+
+        top: 15px;
+        right: 15px;
+
+        width: 105px;
+        height: 105px;
+
+    }
+
+    #nav-home {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
+    .nav-direction {
+
+        width: 22px;
+        height: 22px;
+
+        font-size: 0.9rem;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .screen {
+        padding: 25px;
+    }
+
+    .content {
+        width: min(100%, 520px);
+    }
+
+    .brand h1 {
+        font-size: clamp(2.6rem, 14vw, 4.5rem);
+    }
+
+    .brand p {
+        font-size: 0.8rem;
+
+        max-width: 350px;
+    }
+
+    h2 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 0.9rem;
+
+        line-height: 1.55;
+    }
+
+    .service {
+        grid-template-columns: 30px 1fr;
+    }
+
+    .service small {
+        grid-column: 2;
+
+        margin-top: -8px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .screen {
+        padding: 20px;
+    }
+
+    .brand h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    .service {
+        padding: 12px 0;
+    }
+}
